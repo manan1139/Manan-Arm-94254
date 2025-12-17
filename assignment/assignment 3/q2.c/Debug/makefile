@@ -60,7 +60,7 @@ main-build: q2.c.elf secondary-outputs
 
 # Tool invocations
 q2.c.elf q2.c.map: $(OBJS) $(USER_OBJS) C:\Users\SUNBEAM\STM32CubeIDE\workspace_1.19.0\q2.c\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "q2.c.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\SUNBEAM\STM32CubeIDE\workspace_1.19.0\q2.c\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="q2.c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "q2.c.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\SUNBEAM\STM32CubeIDE\workspace_1.19.0\q2.c\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="q2.c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
