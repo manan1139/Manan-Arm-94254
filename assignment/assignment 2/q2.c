@@ -1,17 +1,15 @@
 #include <stdio.h>
-#include <stdint.h>
 
-int main(void) {
-    int8_t value = 0x08;      
-    int bitPosition = 3;       
+int main() {
+    int value = 8;        // Binary: 00001000
+    int bitPosition = 3;  // We want to check the 4th bit (index 3)
 
-    uint8_t mask = (uint8_t)(1u << bitPosition);
-    if (((uint8_t)value & mask) != 0u) {
-        int bit = ((uint8_t)value >> bitPosition) & 1u;
-        printf("Bit %d is set (value = %d)\n", bitPosition, bit);
+    // Move the bit we want to the far right, then check it with '& 1'
+    if ((value >> bitPosition) & 1) {
+        printf("Bit %d is set\n", bitPosition);
     } else {
         printf("Bit %d is clear\n", bitPosition);
     }
-   return 0;
-}
 
+    return 0;
+}
